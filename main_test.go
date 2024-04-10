@@ -51,7 +51,7 @@ func TestBlockingCall(t *testing.T) {
 						// uncomment this to see the test fail:
 						_, err := commonClient.SubscribeToStream(ctx, "somestream", esdb.SubscribeToStreamOptions{From: esdb.End{}})
 
-						// However if each worker has its own client 100+ connections are allowed (multiple TCP connections)
+						// However if each worker has its own client 100 connections are allowed for each client (multiple TCP connections)
 						// uncomment this to see the test pass:
 						// _, err := workerClient.SubscribeToStream(ctx, "somestream", esdb.SubscribeToStreamOptions{From: esdb.End{}})
 
